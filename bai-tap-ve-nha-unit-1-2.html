@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài tập về nhà — Vocabulary and Grammar Review Unit 1 &amp; 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F4EC;
+    --desk:#E9E3D4;
+    --ink:#28271F;
+    --ink-soft:#6B6656;
+    --accent:#3E6259;
+    --accent-soft:#E2EAE3;
+    --rule:#D8D0BA;
+    --correct:#2E7D4F;
+    --correct-bg:#E9F4EC;
+    --incorrect:#AF4530;
+    --incorrect-bg:#FBEDE7;
+    --given-bg:#EFEAD9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--desk);
+    font-family:"DM Sans", -apple-system, sans-serif;
+    color:var(--ink);
+    padding:32px 16px 64px;
+  }
+  .sheet{
+    max-width:760px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:40px 44px 48px;
+  }
+  @media (max-width:600px){
+    .sheet{padding:28px 20px 36px;}
+  }
+  h1{
+    font-family:"Lora", Georgia, serif;
+    font-size:1.7rem;
+    font-weight:600;
+    margin:0 0 4px;
+    line-height:1.25;
+  }
+  .subtitle{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    margin:0 0 22px;
+  }
+  .instructions{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    line-height:1.6;
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    padding:12px 16px;
+    margin-bottom:28px;
+  }
+  .student-row{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    align-items:baseline;
+    margin-bottom:8px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--rule);
+  }
+  .student-row label{
+    font-family:"Lora", serif;
+    font-size:0.95rem;
+  }
+  .student-row input[type="text"]{
+    font-family:"DM Sans", sans-serif;
+    font-size:0.95rem;
+    border:none;
+    border-bottom:1px solid var(--ink-soft);
+    background:transparent;
+    padding:4px 2px;
+    min-width:240px;
+    color:var(--ink);
+  }
+  .student-row input[type="text"]:focus{outline:none;border-bottom-color:var(--accent);}
+
+  .unit-title{
+    font-family:"Lora", serif;
+    font-size:1.25rem;
+    font-weight:600;
+    color:var(--accent);
+    margin:36px 0 4px;
+    padding-top:16px;
+    border-top:1px solid var(--rule);
+  }
+  .unit-title:first-of-type{border-top:none;padding-top:0;margin-top:8px;}
+
+  .exercise{margin:24px 0 0;}
+  .exercise h3{
+    font-family:"Lora", serif;
+    font-size:1.02rem;
+    font-weight:600;
+    margin:0 0 4px;
+  }
+  .exercise .prompt{
+    font-size:0.88rem;
+    font-style:italic;
+    color:var(--ink-soft);
+    margin:0 0 12px;
+  }
+  .wordbox{
+    font-size:0.9rem;
+    background:var(--given-bg);
+    border:1px solid var(--rule);
+    padding:8px 14px;
+    margin-bottom:14px;
+    border-radius:3px;
+    color:var(--ink-soft);
+  }
+  .item{
+    font-size:0.96rem;
+    line-height:2.1;
+    margin-bottom:2px;
+  }
+  .item .num{color:var(--ink-soft);margin-right:4px;}
+
+  .blank{
+    font-family:"DM Sans", sans-serif;
+    font-size:0.95rem;
+    border:none;
+    border-bottom:1.5px solid var(--ink-soft);
+    background:transparent;
+    padding:2px 4px;
+    min-width:110px;
+    text-align:center;
+    color:var(--ink);
+  }
+  .blank:focus{outline:none;border-bottom-color:var(--accent);}
+  .blank[disabled]{
+    background:var(--given-bg);
+    border-bottom-color:var(--rule);
+    color:var(--ink-soft);
+    border-radius:2px;
+  }
+  select.blank{min-width:56px;text-align:left;padding:2px 4px;}
+  .blank.correct{border-bottom-color:var(--correct);background:var(--correct-bg);color:var(--correct);border-radius:2px;}
+  .blank.incorrect{border-bottom-color:var(--incorrect);background:var(--incorrect-bg);color:var(--incorrect);border-radius:2px;}
+
+  .mark{font-size:0.85rem;font-weight:700;margin-left:2px;display:none;}
+  .mark-correct{display:inline;color:var(--correct);}
+  .mark-incorrect{display:inline;color:var(--incorrect);}
+
+  .refbox{
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    background:var(--given-bg);
+    border:1px solid var(--rule);
+    padding:10px 14px;
+    margin-top:10px;
+    border-radius:3px;
+    line-height:1.7;
+  }
+  .refbox b{color:var(--ink);}
+
+  .actions{
+    margin-top:40px;
+    padding-top:24px;
+    border-top:1px solid var(--rule);
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  button{
+    font-family:"DM Sans", sans-serif;
+    font-size:0.92rem;
+    font-weight:500;
+    padding:11px 22px;
+    border-radius:3px;
+    border:1px solid var(--accent);
+    cursor:pointer;
+    background:var(--accent);
+    color:var(--paper);
+  }
+  button:hover{opacity:0.9;}
+  button.secondary{
+    background:transparent;
+    color:var(--accent);
+  }
+  button:disabled{
+    background:var(--rule);
+    border-color:var(--rule);
+    color:var(--ink-soft);
+    cursor:not-allowed;
+    opacity:0.7;
+  }
+  button:focus-visible, .blank:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .score-panel{
+    display:none;
+    margin-top:20px;
+    padding:16px 18px;
+    background:var(--accent-soft);
+    border:1px solid var(--accent);
+    border-radius:4px;
+    font-size:0.95rem;
+  }
+  .score-panel .big{
+    font-family:"Lora", serif;
+    font-size:1.4rem;
+    font-weight:600;
+    color:var(--accent);
+    margin-bottom:4px;
+  }
+  .score-panel .sub{color:var(--ink-soft);font-size:0.85rem;}
+
+  .toast{
+    display:none;
+    margin-top:12px;
+    font-size:0.85rem;
+    color:var(--correct);
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <h1>Vocabulary and Grammar Review — Unit 1 &amp; 2</h1>
+  <p class="subtitle">Ôn tập từ vựng và ngữ pháp</p>
+
+  <div class="instructions">
+    Điền đáp án vào các chỗ trống bên dưới. Những câu có nền vàng nhạt là ví dụ mẫu, không cần làm.
+    Sau khi hoàn thành, nhấn <b>“Nộp bài”</b> để xem đúng/sai và điểm số. Sau đó nhấn
+    <b>“Sao chép đáp án gửi giáo viên”</b> để sao chép toàn bộ bài làm và dán vào tin nhắn/email gửi cho giáo viên.
+  </div>
+
+  <div class="student-row">
+    <label for="studentName">Họ và tên học sinh:</label>
+    <input type="text" id="studentName" placeholder="Nhập tên của em">
+  </div>
+
+  <!-- ============ UNIT 1 ============ -->
+  <div class="unit-title">Unit 1</div>
+
+  <div class="exercise">
+    <h3>1. Vocabulary — Complete the sentences</h3>
+    <p class="prompt">Complete the sentences below with words and phrases from the box.</p>
+    <div class="wordbox">city centre · country · mountains · outskirts · sea · suburbs</div>
+    <p class="item"><span class="num">1.</span>Feodor is keen on climbing and he would love to live in the <input class="blank" value="mountains" disabled>.</p>
+    <p class="item"><span class="num">2.</span>Khaled lives in the <input class="blank" id="u1e1q2"><span class="mark" id="u1e1q2-mark"></span>, just near the main square and next to the central station.</p>
+    <p class="item"><span class="num">3.</span>Leila takes a bus to get to college from her home on the <input class="blank" id="u1e1q3"><span class="mark" id="u1e1q3-mark"></span> of the city.</p>
+    <p class="item"><span class="num">4.</span>Hua was born and brought up in the <input class="blank" id="u1e1q4"><span class="mark" id="u1e1q4-mark"></span>, surrounded by fields and farms.</p>
+    <p class="item"><span class="num">5.</span>I don't really live in the city; I live in a village nearby, so I suppose I live in the <input class="blank" id="u1e1q5"><span class="mark" id="u1e1q5-mark"></span>.</p>
+    <p class="item"><span class="num">6.</span>Piau's father was a fisherman, so he has always lived by the <input class="blank" id="u1e1q6"><span class="mark" id="u1e1q6-mark"></span>.</p>
+  </div>
+
+  <div class="exercise">
+    <h3>2. Vocabulary — Match the phrases</h3>
+    <p class="prompt">Match the phrases on the left (1–8) with phrases on the right (a–h) which express similar ideas. Chọn chữ cái phù hợp.</p>
+    <p class="item"><span class="num">1.</span>crowded streets → <input class="blank" value="c" disabled></p>
+    <p class="item"><span class="num">2.</span>fast public transport →
+      <select class="blank" id="u1e2q2"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u1e2q2-mark"></span>
+    </p>
+    <p class="item"><span class="num">3.</span>friendly inhabitants →
+      <select class="blank" id="u1e2q3"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u1e2q3-mark"></span>
+    </p>
+    <p class="item"><span class="num">4.</span>lots to do →
+      <select class="blank" id="u1e2q4"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u1e2q4-mark"></span>
+    </p>
+    <p class="item"><span class="num">5.</span>people in a hurry →
+      <select class="blank" id="u1e2q5"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u1e2q5-mark"></span>
+    </p>
+    <p class="item"><span class="num">6.</span>spectacular scenery →
+      <select class="blank" id="u1e2q6"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u1e2q6-mark"></span>
+    </p>
+    <p class="item"><span class="num">7.</span>has a reputation for →
+      <select class="blank" id="u1e2q7"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u1e2q7-mark"></span>
+    </p>
+    <p class="item"><span class="num">8.</span>a relaxed lifestyle →
+      <select class="blank" id="u1e2q8"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u1e2q8-mark"></span>
+    </p>
+    <div class="refbox">
+      <b>a</b> Everyone is in a rush. &nbsp; <b>b</b> The local population is very welcoming. &nbsp; <b>c</b> The pavements are full of people.<br>
+      <b>d</b> quiet way of life &nbsp; <b>e</b> is known for &nbsp; <b>f</b> There are wonderful views from the hotel.<br>
+      <b>g</b> The underground will take you rapidly where you want to go. &nbsp; <b>h</b> There are plenty of interesting places to visit.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>3. Vocabulary — Adjectives</h3>
+    <p class="prompt">Complete the sentences using adjectives that fit the crossword grid.</p>
+    <p class="item"><span class="num">1.</span>Students in this city tend to share <input class="blank" value="tiny" disabled> flats, so their living conditions are very crowded.</p>
+    <p class="item"><span class="num">2.</span>Fatma comes from a large, <input class="blank" id="u1e3q2"><span class="mark" id="u1e3q2-mark"></span> city with lots of factories and smoke.</p>
+    <p class="item"><span class="num">3.</span>Neighbours who live by the <input class="blank" id="u1e3q3"><span class="mark" id="u1e3q3-mark"></span> main road often complain about the traffic noise.</p>
+    <p class="item"><span class="num">4.</span>It's such a <input class="blank" id="u1e3q4"><span class="mark" id="u1e3q4-mark"></span> village that it attracts plenty of tourists.</p>
+    <p class="item"><span class="num">5.</span>Raul's house is in a <input class="blank" id="u1e3q5"><span class="mark" id="u1e3q5-mark"></span> suburb with a low crime rate.</p>
+    <p class="item"><span class="num">6.</span>Chen lives on the 15th floor of a <input class="blank" id="u1e3q6"><span class="mark" id="u1e3q6-mark"></span> apartment block.</p>
+  </div>
+
+  <div class="exercise">
+    <h3>4. Grammar — Present simple or present continuous</h3>
+    <p class="prompt">Complete these sentences with the correct form of the verb in brackets.</p>
+    <p class="item"><span class="num">1.</span>The number of medical students at my university <input class="blank" value="is rising" disabled> (rise).</p>
+    <p class="item"><span class="num">2.</span>Sayed <input class="blank" id="u1e4q2a"><span class="mark" id="u1e4q2a-mark"></span> (enjoy) playing football when he <input class="blank" id="u1e4q2b"><span class="mark" id="u1e4q2b-mark"></span> (have) time.</p>
+    <p class="item"><span class="num">3.</span>Walid <input class="blank" id="u1e4q3a"><span class="mark" id="u1e4q3a-mark"></span> (live) in Qatar, where he was born, but he <input class="blank" id="u1e4q3b"><span class="mark" id="u1e4q3b-mark"></span> (work) in Dubai almost every day.</p>
+    <p class="item"><span class="num">4.</span>Nowadays, more and more people <input class="blank" id="u1e4q4"><span class="mark" id="u1e4q4-mark"></span> (leave) the villages to work in the city.</p>
+    <p class="item"><span class="num">5.</span>Katya <input class="blank" id="u1e4q5a"><span class="mark" id="u1e4q5a-mark"></span> (study) English because she <input class="blank" id="u1e4q5b"><span class="mark" id="u1e4q5b-mark"></span> (want) to be a flight attendant.</p>
+    <p class="item"><span class="num">6.</span>People's reading habits <input class="blank" id="u1e4q6a"><span class="mark" id="u1e4q6a-mark"></span> (change) because they <input class="blank" id="u1e4q6b"><span class="mark" id="u1e4q6b-mark"></span> (read) more on the Internet and fewer books.</p>
+  </div>
+
+  <!-- ============ UNIT 2 ============ -->
+  <div class="unit-title">Unit 2</div>
+
+  <div class="exercise">
+    <h3>1. Vocabulary — Complete the sentences</h3>
+    <p class="prompt">Complete the sentences below with the words in the box.</p>
+    <div class="wordbox">able · can · how · know · learn</div>
+    <p class="item"><span class="num">1.</span>I <input class="blank" value="can" disabled> swim quite well.</p>
+    <p class="item"><span class="num">2.</span>I'd like to be <input class="blank" id="u2e1q2"><span class="mark" id="u2e1q2-mark"></span> to fly a plane.</p>
+    <p class="item"><span class="num">3.</span>I don't <input class="blank" id="u2e1q3"><span class="mark" id="u2e1q3-mark"></span> how to cook well.</p>
+    <p class="item"><span class="num">4.</span>I want to <input class="blank" id="u2e1q4"><span class="mark" id="u2e1q4-mark"></span> to paint.</p>
+    <p class="item"><span class="num">5.</span>Once you've learned, you never forget <input class="blank" id="u2e1q5"><span class="mark" id="u2e1q5-mark"></span> to ride a bicycle.</p>
+  </div>
+
+  <div class="exercise">
+    <h3>2. Vocabulary — Match the words with definitions</h3>
+    <p class="prompt">Match the words in italics in sentences 1–8 with their definitions (a–h). Chọn chữ cái phù hợp.</p>
+    <p class="item"><span class="num">1.</span>His friends found his behaviour <i>unacceptable</i>. → <input class="blank" value="g" disabled></p>
+    <p class="item"><span class="num">2.</span>The examiners were <i>satisfied</i> that he had a good knowledge of the subject. →
+      <select class="blank" id="u2e2q2"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u2e2q2-mark"></span>
+    </p>
+    <p class="item"><span class="num">3.</span>Scientists decided to <i>re-examine</i> the evidence, as it did not completely match their theory. →
+      <select class="blank" id="u2e2q3"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u2e2q3-mark"></span>
+    </p>
+    <p class="item"><span class="num">4.</span>The Moon approaches <i>exceptionally</i> close to the Earth every 19 years. →
+      <select class="blank" id="u2e2q4"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u2e2q4-mark"></span>
+    </p>
+    <p class="item"><span class="num">5.</span>Although he's highly intelligent, his behaviour is <i>inexplicable</i>. →
+      <select class="blank" id="u2e2q5"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u2e2q5-mark"></span>
+    </p>
+    <p class="item"><span class="num">6.</span>The colours were <i>indistinguishable</i> at such a great distance. →
+      <select class="blank" id="u2e2q6"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u2e2q6-mark"></span>
+    </p>
+    <p class="item"><span class="num">7.</span>It was impossible to <i>quantify</i> how many people used the new service. →
+      <select class="blank" id="u2e2q7"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u2e2q7-mark"></span>
+    </p>
+    <p class="item"><span class="num">8.</span>Paganini was perhaps the best <i>violinist</i> of all time. →
+      <select class="blank" id="u2e2q8"><option value="">–</option><option>a</option><option>b</option><option>c</option><option>d</option><option>e</option><option>f</option><option>g</option><option>h</option></select>
+      <span class="mark" id="u2e2q8-mark"></span>
+    </p>
+    <div class="refbox">
+      <b>a</b> impossible to see as different or separate &nbsp; <b>b</b> look again very carefully, especially to try to discover something<br>
+      <b>c</b> measure the amount of something &nbsp; <b>d</b> pleased because something happened in the way that they wanted<br>
+      <b>e</b> so strange or unusual that you cannot understand or explain it &nbsp; <b>f</b> someone who plays a violin<br>
+      <b>g</b> too bad to be allowed to continue &nbsp; <b>h</b> very unusually
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>3. Grammar — Past simple</h3>
+    <p class="prompt">Complete these sentences with the past simple of the verbs in brackets.</p>
+    <p class="item"><span class="num">1.</span>The town council <input class="blank" value="built" disabled> (build) a bridge across the river to the island.</p>
+    <p class="item"><span class="num">2.</span>Mahfouz <input class="blank" id="u2e3q2"><span class="mark" id="u2e3q2-mark"></span> (write) more than 15 books during his life.</p>
+    <p class="item"><span class="num">3.</span>In my country, many people <input class="blank" id="u2e3q3a"><span class="mark" id="u2e3q3a-mark"></span> (stop) smoking when the price of cigarettes <input class="blank" id="u2e3q3b"><span class="mark" id="u2e3q3b-mark"></span> (go) up.</p>
+    <p class="item"><span class="num">4.</span>In this region, most people <input class="blank" id="u2e3q4"><span class="mark" id="u2e3q4-mark"></span> (speak) the local language a hundred years ago.</p>
+    <p class="item"><span class="num">5.</span>In 2004, the company <input class="blank" id="u2e3q5"><span class="mark" id="u2e3q5-mark"></span> (develop) a new technique using digital technology.</p>
+    <p class="item"><span class="num">6.</span>The change <input class="blank" id="u2e3q6a"><span class="mark" id="u2e3q6a-mark"></span> (happen) because more immigrants <input class="blank" id="u2e3q6b"><span class="mark" id="u2e3q6b-mark"></span> (arrive) in the country.</p>
+    <p class="item"><span class="num">7.</span>The storm which <input class="blank" id="u2e3q7a"><span class="mark" id="u2e3q7a-mark"></span> (occur) at the end of January <input class="blank" id="u2e3q7b"><span class="mark" id="u2e3q7b-mark"></span> (destroy) several houses.</p>
+    <p class="item"><span class="num">8.</span>The number of students in higher education <input class="blank" id="u2e3q8a"><span class="mark" id="u2e3q8a-mark"></span> (rise) until 2003 and then <input class="blank" id="u2e3q8b"><span class="mark" id="u2e3q8b-mark"></span> (fall) the following year.</p>
+  </div>
+
+  <div class="exercise">
+    <h3>4. Grammar — Also, and, but or however</h3>
+    <p class="prompt">Complete these sentences with also, and, but or however.</p>
+    <p class="item"><span class="num">1.</span>The journey was long <input class="blank" value="and" disabled> complicated.</p>
+    <p class="item"><span class="num">2.</span>Few students look forward to doing exams, <input class="blank" id="u2e4q2"><span class="mark" id="u2e4q2-mark"></span> they realise they are necessary.</p>
+    <p class="item"><span class="num">3.</span>Many people travel to see new places. They <input class="blank" id="u2e4q3"><span class="mark" id="u2e4q3-mark"></span> want to experience other cultures.</p>
+    <p class="item"><span class="num">4.</span>Marco Polo travelled to Persia <input class="blank" id="u2e4q4"><span class="mark" id="u2e4q4-mark"></span> then he travelled to China.</p>
+    <p class="item"><span class="num">5.</span>Visitors to this region are often surprised that the inhabitants are poor <input class="blank" id="u2e4q5"><span class="mark" id="u2e4q5-mark"></span> happy.</p>
+    <p class="item"><span class="num">6.</span>Working with children can be very challenging. <input class="blank" id="u2e4q6"><span class="mark" id="u2e4q6-mark"></span>, it can be very satisfying as well.</p>
+  </div>
+
+  <div class="actions">
+    <button id="submitBtn" type="button">Nộp bài</button>
+    <button id="resetBtn" type="button" class="secondary">Làm lại</button>
+    <button id="copyBtn" type="button" class="secondary" disabled>Sao chép đáp án gửi giáo viên</button>
+  </div>
+  <div class="toast" id="toast">Đã sao chép đáp án — hãy dán vào tin nhắn hoặc email gửi giáo viên.</div>
+
+  <div class="score-panel" id="scorePanel">
+    <div class="big" id="scoreBig"></div>
+    <div class="sub" id="scoreSub"></div>
+  </div>
+
+</div>
+
+<script>
+  // Each question: id (element id), section (for report), label (short cue), answers (accepted list)
+  const QUESTIONS = [
+    {id:"u1e1q2", section:"Unit 1 — Vocabulary 1", label:"Câu 2", answers:["city centre"]},
+    {id:"u1e1q3", section:"Unit 1 — Vocabulary 1", label:"Câu 3", answers:["outskirts"]},
+    {id:"u1e1q4", section:"Unit 1 — Vocabulary 1", label:"Câu 4", answers:["country"]},
+    {id:"u1e1q5", section:"Unit 1 — Vocabulary 1", label:"Câu 5", answers:["suburbs"]},
+    {id:"u1e1q6", section:"Unit 1 — Vocabulary 1", label:"Câu 6", answers:["sea"]},
+
+    {id:"u1e2q2", section:"Unit 1 — Vocabulary 2", label:"Câu 2", answers:["g"]},
+    {id:"u1e2q3", section:"Unit 1 — Vocabulary 2", label:"Câu 3", answers:["b"]},
+    {id:"u1e2q4", section:"Unit 1 — Vocabulary 2", label:"Câu 4", answers:["h"]},
+    {id:"u1e2q5", section:"Unit 1 — Vocabulary 2", label:"Câu 5", answers:["a"]},
+    {id:"u1e2q6", section:"Unit 1 — Vocabulary 2", label:"Câu 6", answers:["f"]},
+    {id:"u1e2q7", section:"Unit 1 — Vocabulary 2", label:"Câu 7", answers:["e"]},
+    {id:"u1e2q8", section:"Unit 1 — Vocabulary 2", label:"Câu 8", answers:["d"]},
+
+    {id:"u1e3q2", section:"Unit 1 — Vocabulary 3", label:"Câu 2", answers:["industrial"]},
+    {id:"u1e3q3", section:"Unit 1 — Vocabulary 3", label:"Câu 3", answers:["busy"]},
+    {id:"u1e3q4", section:"Unit 1 — Vocabulary 3", label:"Câu 4", answers:["pretty"]},
+    {id:"u1e3q5", section:"Unit 1 — Vocabulary 3", label:"Câu 5", answers:["quiet"]},
+    {id:"u1e3q6", section:"Unit 1 — Vocabulary 3", label:"Câu 6", answers:["tall"]},
+
+    {id:"u1e4q2a", section:"Unit 1 — Grammar 4", label:"Câu 2 (động từ 1)", answers:["enjoys"]},
+    {id:"u1e4q2b", section:"Unit 1 — Grammar 4", label:"Câu 2 (động từ 2)", answers:["has"]},
+    {id:"u1e4q3a", section:"Unit 1 — Grammar 4", label:"Câu 3 (động từ 1)", answers:["lives"]},
+    {id:"u1e4q3b", section:"Unit 1 — Grammar 4", label:"Câu 3 (động từ 2)", answers:["works"]},
+    {id:"u1e4q4",  section:"Unit 1 — Grammar 4", label:"Câu 4", answers:["are leaving"]},
+    {id:"u1e4q5a", section:"Unit 1 — Grammar 4", label:"Câu 5 (động từ 1)", answers:["is studying"]},
+    {id:"u1e4q5b", section:"Unit 1 — Grammar 4", label:"Câu 5 (động từ 2)", answers:["wants"]},
+    {id:"u1e4q6a", section:"Unit 1 — Grammar 4", label:"Câu 6 (động từ 1)", answers:["are changing"]},
+    {id:"u1e4q6b", section:"Unit 1 — Grammar 4", label:"Câu 6 (động từ 2)", answers:["read","are reading"]},
+
+    {id:"u2e1q2", section:"Unit 2 — Vocabulary 1", label:"Câu 2", answers:["able"]},
+    {id:"u2e1q3", section:"Unit 2 — Vocabulary 1", label:"Câu 3", answers:["know"]},
+    {id:"u2e1q4", section:"Unit 2 — Vocabulary 1", label:"Câu 4", answers:["learn"]},
+    {id:"u2e1q5", section:"Unit 2 — Vocabulary 1", label:"Câu 5", answers:["how"]},
+
+    {id:"u2e2q2", section:"Unit 2 — Vocabulary 2", label:"Câu 2", answers:["d"]},
+    {id:"u2e2q3", section:"Unit 2 — Vocabulary 2", label:"Câu 3", answers:["b"]},
+    {id:"u2e2q4", section:"Unit 2 — Vocabulary 2", label:"Câu 4", answers:["h"]},
+    {id:"u2e2q5", section:"Unit 2 — Vocabulary 2", label:"Câu 5", answers:["e"]},
+    {id:"u2e2q6", section:"Unit 2 — Vocabulary 2", label:"Câu 6", answers:["a"]},
+    {id:"u2e2q7", section:"Unit 2 — Vocabulary 2", label:"Câu 7", answers:["c"]},
+    {id:"u2e2q8", section:"Unit 2 — Vocabulary 2", label:"Câu 8", answers:["f"]},
+
+    {id:"u2e3q2",  section:"Unit 2 — Grammar 3", label:"Câu 2", answers:["wrote"]},
+    {id:"u2e3q3a", section:"Unit 2 — Grammar 3", label:"Câu 3 (động từ 1)", answers:["stopped"]},
+    {id:"u2e3q3b", section:"Unit 2 — Grammar 3", label:"Câu 3 (động từ 2)", answers:["went"]},
+    {id:"u2e3q4",  section:"Unit 2 — Grammar 3", label:"Câu 4", answers:["spoke"]},
+    {id:"u2e3q5",  section:"Unit 2 — Grammar 3", label:"Câu 5", answers:["developed"]},
+    {id:"u2e3q6a", section:"Unit 2 — Grammar 3", label:"Câu 6 (động từ 1)", answers:["happened"]},
+    {id:"u2e3q6b", section:"Unit 2 — Grammar 3", label:"Câu 6 (động từ 2)", answers:["arrived"]},
+    {id:"u2e3q7a", section:"Unit 2 — Grammar 3", label:"Câu 7 (động từ 1)", answers:["occurred"]},
+    {id:"u2e3q7b", section:"Unit 2 — Grammar 3", label:"Câu 7 (động từ 2)", answers:["destroyed"]},
+    {id:"u2e3q8a", section:"Unit 2 — Grammar 3", label:"Câu 8 (động từ 1)", answers:["rose"]},
+    {id:"u2e3q8b", section:"Unit 2 — Grammar 3", label:"Câu 8 (động từ 2)", answers:["fell"]},
+
+    {id:"u2e4q2", section:"Unit 2 — Grammar 4", label:"Câu 2", answers:["but"]},
+    {id:"u2e4q3", section:"Unit 2 — Grammar 4", label:"Câu 3", answers:["also"]},
+    {id:"u2e4q4", section:"Unit 2 — Grammar 4", label:"Câu 4", answers:["and"]},
+    {id:"u2e4q5", section:"Unit 2 — Grammar 4", label:"Câu 5", answers:["but"]},
+    {id:"u2e4q6", section:"Unit 2 — Grammar 4", label:"Câu 6", answers:["however"]}
+  ];
+
+  const TOTAL = QUESTIONS.length;
+
+  function normalize(str){
+    return (str || "").trim().toLowerCase().replace(/\s+/g, " ");
+  }
+
+  let submitted = false;
+  let lastScore = 0;
+
+  document.getElementById("submitBtn").addEventListener("click", function(){
+    const name = document.getElementById("studentName").value.trim();
+    if(!name){
+      alert("Vui lòng điền tên học sinh trước khi nộp bài.");
+      document.getElementById("studentName").focus();
+      return;
+    }
+    let score = 0;
+    QUESTIONS.forEach(function(q){
+      const el = document.getElementById(q.id);
+      const markEl = document.getElementById(q.id + "-mark");
+      const val = normalize(el.value);
+      const accepted = q.answers.map(normalize);
+      const ok = val !== "" && accepted.indexOf(val) !== -1;
+      el.classList.remove("correct", "incorrect");
+      el.classList.add(ok ? "correct" : "incorrect");
+      markEl.textContent = ok ? "✓" : "✗";
+      markEl.className = "mark " + (ok ? "mark-correct" : "mark-incorrect");
+      el.disabled = true;
+      if(ok) score++;
+    });
+
+    lastScore = score;
+    submitted = true;
+
+    const u1Score = QUESTIONS.filter(q => q.section.startsWith("Unit 1")).filter(q => document.getElementById(q.id).classList.contains("correct")).length;
+    const u1Total = QUESTIONS.filter(q => q.section.startsWith("Unit 1")).length;
+    const u2Score = QUESTIONS.filter(q => q.section.startsWith("Unit 2")).filter(q => document.getElementById(q.id).classList.contains("correct")).length;
+    const u2Total = QUESTIONS.filter(q => q.section.startsWith("Unit 2")).length;
+
+    document.getElementById("scoreBig").textContent = "Điểm: " + score + " / " + TOTAL;
+    document.getElementById("scoreSub").textContent = "Unit 1: " + u1Score + "/" + u1Total + "   ·   Unit 2: " + u2Score + "/" + u2Total;
+    document.getElementById("scorePanel").style.display = "block";
+    document.getElementById("copyBtn").disabled = false;
+    document.getElementById("submitBtn").disabled = true;
+    document.getElementById("toast").style.display = "none";
+    document.getElementById("scorePanel").scrollIntoView({behavior:"smooth", block:"nearest"});
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    QUESTIONS.forEach(function(q){
+      const el = document.getElementById(q.id);
+      const markEl = document.getElementById(q.id + "-mark");
+      el.value = "";
+      el.disabled = false;
+      el.classList.remove("correct", "incorrect");
+      markEl.textContent = "";
+      markEl.className = "mark";
+    });
+    submitted = false;
+    document.getElementById("scorePanel").style.display = "none";
+    document.getElementById("copyBtn").disabled = true;
+    document.getElementById("submitBtn").disabled = false;
+    document.getElementById("toast").style.display = "none";
+  });
+
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    if(!submitted) return;
+    const name = document.getElementById("studentName").value.trim() || "(chưa điền tên)";
+    const today = new Date().toLocaleDateString("vi-VN");
+    let lines = [];
+    lines.push("BÀI TẬP VỀ NHÀ — Vocabulary and Grammar Review (Unit 1 & 2)");
+    lines.push("Học sinh: " + name);
+    lines.push("Ngày nộp: " + today);
+    lines.push("Điểm: " + lastScore + " / " + TOTAL);
+    lines.push("");
+
+    let currentSection = "";
+    QUESTIONS.forEach(function(q){
+      if(q.section !== currentSection){
+        currentSection = q.section;
+        lines.push("--- " + currentSection + " ---");
+      }
+      const el = document.getElementById(q.id);
+      const ok = el.classList.contains("correct");
+      lines.push((ok ? "✓ " : "✗ ") + q.label + ": " + el.value);
+    });
+
+    const text = lines.join("\n");
+
+    function showToast(){
+      const toast = document.getElementById("toast");
+      toast.style.display = "block";
+      setTimeout(function(){ toast.style.display = "none"; }, 4000);
+    }
+
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(showToast).catch(function(){
+        fallbackCopy(text, showToast);
+      });
+    } else {
+      fallbackCopy(text, showToast);
+    }
+  });
+
+  function fallbackCopy(text, cb){
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try{ document.execCommand("copy"); }catch(e){}
+    document.body.removeChild(ta);
+    cb();
+  }
+</script>
+</body>
+</html>
